@@ -1,0 +1,373 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulário de Termos e Responsabilidade para a Peneira Oficial Chelsea Brasil.">
+  <title>Peneira Oficial Chelsea Brasil - Termos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --chelsea-blue: #034694;
+      --chelsea-gold: #FFD700;
+      --light: #f4f4f4;
+      --dark: #0d0d0d;
+      --bg-overlay: rgba(0, 0, 0, 0.85);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+                  url('images/chelsea-k9ec0letdiy4zx44.webp') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--light);
+      min-height: 100vh;
+      padding-top: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      background: var(--bg-overlay);
+      backdrop-filter: blur(6px);
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      flex-wrap: wrap;
+    }
+
+    .logo-titulo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-titulo img {
+      height: 50px;
+    }
+
+    .logo-titulo h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--chelsea-gold);
+    }
+
+    nav a {
+      color: var(--chelsea-gold);
+      margin-left: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    main {
+      background-color: rgba(3, 70, 148, 0.9);
+      padding: 40px 30px;
+      margin: 20px;
+      width: 100%;
+      max-width: 720px;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: var(--chelsea-gold);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      color: var(--light);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      border-bottom: 2px solid var(--chelsea-gold);
+      padding-bottom: 5px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid var(--chelsea-gold);
+      font-size: 1rem;
+      background-color: #002b5e;
+      color: white;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #ccc;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--chelsea-gold);
+      box-shadow: 0 0 8px var(--chelsea-gold);
+    }
+
+    select option {
+      background-color: #002b5e;
+      color: white;
+    }
+
+    fieldset {
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    .option-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style: square;
+    }
+
+    button[type="submit"] {
+      background: linear-gradient(90deg, var(--chelsea-blue), var(--chelsea-gold));
+      color: #000;
+      padding: 14px 30px;
+      border: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      opacity: 1;
+      transition: none;
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.8);
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .error {
+      color: #ff4d4d;
+      font-weight: bold;
+      text-align: center;
+      display: none;
+      margin-top: 10px;
+    }
+
+    .progress {
+      height: 8px;
+      background: #f4f4f4;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 25px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #FFD700, #034694);
+      transition: width 0.4s ease-in-out;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        justify-content: center;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-titulo">
+      <img src="assets/images/Chelsea_FC.svg" alt="Logo Chelsea">
+      <h1>Chelsea Brasil</h1>
+    </div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="locais.html">Locais</a>
+      <a href="contato.html">Contato</a>
+      <a href="beneficios.html">Benefícios</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+<form id="form">
+      <h1>Declaração e Termos da Peneira Chelsea Brasil</h1>
+
+      <section>
+        <h2>Saúde</h2>
+        <label for="health">Algum problema de saúde ou uso de medicamentos?</label>
+        <textarea id="health" required="" placeholder="Descreva ou digite 'Nenhum'"></textarea>
+      </section>
+
+      <section>
+        <h2>Tempo de Prática</h2>
+        <label for="experience">Tempo que pratica futebol regularmente:</label>
+        <select id="experience" required="">
+          <option value="">Selecione...</option>
+          <option>Menos de 1 ano</option>
+          <option>1 a 2 anos</option>
+          <option>3 a 5 anos</option>
+          <option>Mais de 5 anos</option>
+        </select>
+      </section>
+
+      <section>
+        <h2>Lesões Anteriores</h2>
+        <fieldset>
+          <legend>Teve lesão grave?</legend>
+          <div class="option-group">
+            <label><input type="radio" name="injury" value="Sim" required=""> Sim</label>
+            <label><input type="radio" name="injury" value="Não"> Não</label>
+          </div>
+          <div id="injuryDetailsContainer" style="display: none;">
+            <label for="injuryDetails">Descreva a lesão:</label>
+            <textarea id="injuryDetails" placeholder="Descreva a lesão..."></textarea>
+          </div>
+        </fieldset>
+      </section>
+
+      <section>
+        <h2>Disponibilidade</h2>
+        <fieldset>
+          <legend>Disponibilidade para treinos e jogos?</legend>
+          <div class="option-group">
+            <label><input type="radio" name="available" value="Sim" required=""> Sim</label>
+            <label><input type="radio" name="available" value="Não"> Não</label>
+          </div>
+        </fieldset>
+      </section>
+
+      <section>
+        <h2>Compromissos do Responsável</h2>
+        <ul>
+          <li>Presença nos treinos e testes do atleta.</li>
+          <li>Entrega de documentos médicos.</li>
+          <li>Concorda com normas do clube.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Informativo</h2>
+        <p>Aprovados recebem apoio financeiro do clube. A seleção é limitada e não garantida.</p>
+      </section>
+
+      <section>
+        <h2>Concordância</h2>
+        <fieldset>
+          <legend>Declara que todas as informações fornecidas são verdadeiras e que concorda integralmente com os termos e responsabilidades descritos acima?</legend>
+          <div class="option-group">
+            <label><input type="radio" name="agree" value="Sim" required=""> Sim</label>
+            <label><input type="radio" name="agree" value="Não"> Não</label>
+          </div>
+        </fieldset>
+      </section>
+
+      <p class="error" id="error">Concorde com os termos para prosseguir.</p>
+      <button type="submit" disabled="">Continuar</button>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById('form');
+    const submitBtn = form.querySelector('button');
+    const errorMsg = document.getElementById('error');
+    const progressBar = document.getElementById('progressBar');
+
+    const requiredFields = ['health', 'experience'];
+
+    form.addEventListener('input', () => {
+      let isValid = true;
+      let filled = 0;
+
+      for (const id of requiredFields) {
+        const field = document.getElementById(id);
+        if (field.value.trim()) filled++;
+        else isValid = false;
+      }
+
+      const agree = form.querySelector('input[name="agree"]:checked');
+      if (agree && agree.value === 'Sim') filled++;
+      else isValid = false;
+
+      const percent = Math.round((filled / 3) * 100);
+      progressBar.style.width = percent + '%';
+
+      submitBtn.disabled = !isValid;
+      errorMsg.style.display = (agree && agree.value !== 'Sim') ? 'block' : 'none';
+    });
+
+    const injuryRadios = document.querySelectorAll('input[name="injury"]');
+    const injuryDetails = document.getElementById('injuryDetailsContainer');
+
+    injuryRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        injuryDetails.style.display = radio.value === 'Sim' ? 'block' : 'none';
+      });
+    });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (!submitBtn.disabled) {
+        window.location.href = 'etapa2.html';
+      }
+    });
+  </script>
+
+<footer style="background-color: #034694; color: white; padding: 20px 0;">
+  <div class="footer-container" style="text-align: center; max-width: 600px; margin: 0 auto; font-family: Arial, sans-serif;">
+    <p><strong>⚽ Peneira Oficial Autorizada pelo Chelsea FC</strong> | Sede Brasil - CNPJ: 97.545.051/0001-30</p>
+<p style="margin: 5px 0; font-weight: bold;">
+  Contato: +44 20 7386 8866 | info@peneirachelsea.com
+</p>
+
+    <div style="margin-top: 10px;">
+      <a href="https://www.instagram.com/chelseafc/" target="_blank" style="margin-right: 10px; color: #ffffff; text-decoration: underline;">Instagram</a>
+      <a href="https://www.facebook.com/chelseafc" target="_blank" style="margin-right: 10px; color: #ffffff; text-decoration: underline;">Facebook</a>
+      <a href="mailto:info@chelseafc.com" style="color: #ffffff; text-decoration: underline;">Contato</a>
+    </div>
+  </div>
+</footer>
+
+
+</body></html>

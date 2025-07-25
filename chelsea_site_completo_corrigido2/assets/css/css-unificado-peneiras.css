@@ -1,0 +1,254 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('../images/thumb-1920-1369032.jpeg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #000;
+  color: #f0f0f0;
+  padding-top: 100px;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-position: top center;
+  }
+}
+
+/* Navbar fixa e responsiva */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(3, 70, 148, 0.9);
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.logo-navbar {
+  height: 45px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-list li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  text-shadow: 0 0 3px rgba(0,0,0,0.6);
+}
+
+.nav-list li a:hover {
+  color: #034694;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+/* Container principal */
+.container {
+  max-width: 960px;
+  margin: auto;
+  background: rgba(10, 10, 10, 0.75);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(3, 70, 148, 0.7);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  color: #fff;
+}
+
+/* Título */
+.title-highlight {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ffffff;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #034694;
+}
+
+/* Stepper */
+.stepper {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  background: #034694;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.step.active {
+  background: #ffffff;
+  color: #034694;
+  border-color: #fff;
+}
+
+/* Form Steps */
+.form-step {
+  display: none;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.form-step.active {
+  display: block;
+}
+
+.form-step .card {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #111;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(3, 70, 148, 0.4);
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 20px;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #111;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #034694;
+  box-shadow: 0 0 8px #034694;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.form-row > div {
+  flex: 1;
+  min-width: 240px;
+}
+
+/* Botões */
+button {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 6px rgba(3, 70, 148, 0.5);
+}
+
+.next-btn {
+  background-color: #034694;
+  color: #ffffff;
+  box-shadow: 0 4px 12px #ffffff;
+}
+
+.next-btn:hover {
+  background-color: #ffffff;
+  color: #034694;
+  box-shadow: 0 0 20px #ffffff;
+  transform: scale(1.05);
+}
+
+.prev-btn {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.prev-btn:hover {
+  background-color: #ffffff;
+  color: #034694;
+  box-shadow: 0 0 12px #ffffff;
+  transform: scale(1.05);
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.checkbox-custom {
+  width: 20px;
+  height: 20px;
+  accent-color: #034694;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(3, 70, 148, 0.9);
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  text-shadow: 0 0 6px rgba(0,0,0,0.8);
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #034694;
+}

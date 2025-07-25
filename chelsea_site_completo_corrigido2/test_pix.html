@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gerar Pix de Teste</title>
+</head>
+<body>
+  <h2>Gerar Pix de Teste (R$38,00)</h2>
+  <button onclick="gerarPix()">Gerar Pix</button>
+  <pre id="resultado"></pre>
+
+  <script>
+    async function gerarPix() {
+      try {
+        const resposta = await fetch('criar_pix.php');
+        const dados = await resposta.json();
+        document.getElementById("resultado").textContent = JSON.stringify(dados, null, 2);
+      } catch (erro) {
+        document.getElementById("resultado").textContent = "Erro ao conectar com criar_pix.php";
+      }
+    }
+  </script>
+</body>
+</html>

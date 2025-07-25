@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locais Oficiais - Chelsea Brasil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/images/Chelsea_FC.svg">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #001489, #ffffff);
+      color: #001a33;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 1000px;
+      width: 100%;
+      box-shadow: 0 0 25px rgba(0, 0, 50, 0.3);
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 20px;
+      width: 90px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #FFD700;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .highlight-message {
+      background: #FFD700;
+      color: #000;
+      padding: 16px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    #mensagem {
+      font-size: 1.1rem;
+      text-align: center;
+      margin: 20px 0;
+      color: #001489;
+    }
+
+    .state-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .state-list li {
+      background: #f0f0f0;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border-left: 5px solid #001489;
+      font-weight: 600;
+      color: #001a33;
+      transition: 0.3s;
+    }
+
+    .state-list li:hover {
+      background: #e6e6e6;
+      transform: scale(1.03);
+    }
+
+    .info-box {
+      margin-top: 30px;
+      background: #fdfdfd;
+      padding: 20px;
+      border-left: 5px solid #FFD700;
+      border-radius: 12px;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: 40px auto 0;
+      padding: 14px 0;
+      background: linear-gradient(to right, #001489, #FFD700);
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(to right, #FFD700, #001489);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 30px 20px;
+      }
+
+      .btn {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <script>
+    function obterLocalizacao() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(mostrarCidade, erroLocalizacao, {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0
+        });
+      } else {
+        document.getElementById("mensagem").innerText = "Geolocalização não suportada. Buscando por IP...";
+        obterCidadePorIP();
+      }
+    }
+
+    function mostrarCidade(position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+
+      fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
+        .then(response => response.json())
+        .then(data => {
+          const cidade = data.address.city || data.address.town || data.address.village || "sua região";
+          document.getElementById("mensagem").innerText = `📍 Também teremos avaliação em ${cidade}, com credenciado oficial do Chelsea FC.`;
+        })
+        .catch(() => {
+          document.getElementById("mensagem").innerText = "Não foi possível obter sua localização.";
+        });
+    }
+
+    function erroLocalizacao(error) {
+      if (error.code === error.PERMISSION_DENIED) {
+        document.getElementById("mensagem").innerText = "⚠️ Permissão negada. Ative a localização do seu dispositivo.";
+      } else {
+        document.getElementById("mensagem").innerText = "Erro ao localizar. Buscando por IP...";
+        obterCidadePorIP();
+      }
+    }
+
+    function obterCidadePorIP() {
+      fetch("https://ipinfo.io/json?token=fa3e60fcb236b0")
+        .then(response => response.json())
+        .then(data => {
+          const cidade = data.city || "sua região";
+          document.getElementById("mensagem").innerText = `📍 Também teremos avaliação em ${cidade}, com credenciado oficial do Chelsea FC.`;
+        })
+        .catch(() => {
+          document.getElementById("mensagem").innerText = "Não foi possível determinar a cidade.";
+        });
+    }
+
+    window.onload = obterLocalizacao;
+  </script>
+</head>
+<body>
+  <div class="container">
+    <img src="assets/images/Chelsea_FC.svg" alt="Escudo do Chelsea" class="logo">
+    <h1>Locais de Avaliação Oficial</h1>
+    <p class="subtitle">Credenciados espalhados pelo Brasil. Sua chance de vestir azul pode estar próxima!</p>
+
+    <div class="highlight-message">
+      🏆 Todos os custos dos atletas aprovados são 100% cobertos pelo clube. Mostre seu talento e dedicação!
+    </div>
+
+    <p id="mensagem">📍 Localizando sua cidade...</p>
+
+    <ul class="state-list">
+  <li>Acre (AC)</li>
+  <li>Alagoas (AL)</li>
+  <li>Amapá (AP)</li>
+  <li>Amazonas (AM)</li>
+  <li>Bahia (BA)</li>
+  <li>Ceará (CE)</li>
+  <li>Distrito Federal (DF)</li>
+  <li>Espírito Santo (ES)</li>
+  <li>Goiás (GO)</li>
+  <li>Maranhão (MA)</li>
+  <li>Mato Grosso (MT)</li>
+  <li>Mato Grosso do Sul (MS)</li>
+  <li>Minas Gerais (MG)</li>
+  <li>Pará (PA)</li>
+  <li>Paraíba (PB)</li>
+  <li>Paraná (PR)</li>
+  <li>Pernambuco (PE)</li>
+  <li>Piauí (PI)</li>
+  <li>Rio de Janeiro (RJ)</li>
+  <li>Rio Grande do Norte (RN)</li>
+  <li>Rio Grande do Sul (RS)</li>
+  <li>Rondônia (RO)</li>
+  <li>Roraima (RR)</li>
+  <li>Santa Catarina (SC)</li>
+  <li>São Paulo (SP)</li>
+  <li>Sergipe (SE)</li>
+  <li>Tocantins (TO)</li>
+</ul>
+
+
+    <div class="info-box">
+      📅 As datas e locais exatos serão enviados por e-mail e WhatsApp após a confirmação da inscrição. Fique atento(a)!
+    </div>
+
+    <a href="etapa1.html" class="btn">⬅ Voltar para Inscrição</a>
+  </div>
+
+
+</body></html>
+

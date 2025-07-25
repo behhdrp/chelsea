@@ -1,0 +1,359 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <link rel="icon" href="assets/images/Chelsea_FC.svg" type="image/svg+xml">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peneira Oficial Chelsea FC - Brasil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {margin:0;font-family:'Inter',sans-serif;background:#002366;color:#fff;}
+    header{display:flex;justify-content:space-between;align-items:center;padding:1rem;background:#001f5e;box-shadow:0 2px 10px rgba(0,0,0,.6);position:sticky;top:0;z-index:999;}
+    header img{height:60px;}
+    header nav a{color:#f0d536;margin-left:2rem;text-decoration:none;font-weight:600;}
+    header nav a:hover{color:#fff;}
+    .hero{text-align:center;padding:3rem 1rem;background:linear-gradient(#002366,#011a4d);}
+    .hero h1{color:#f0d536;font-size:2.5rem;margin-bottom:1rem;}
+    .hero p{max-width:720px;margin:0 auto 1rem;font-size:1.1rem;color:#e0e0e0;}
+    .btn{padding:1rem 2rem;border-radius:50px;font-weight:700;text-decoration:none;margin:.5rem;display:inline-block;}
+    .btn-yellow{background:#f0d536;color:#002366;}
+    .btn-outline{border:2px solid #f0d536;color:#f0d536;}
+    .info-box,.security-box,.countdown-box{margin:1.5rem auto;background:#f0d536;color:#002366;padding:1rem;border-radius:8px;text-align:center;max-width:700px;}
+    .faq,.testimonials,.partners{max-width:800px;margin:3rem auto;padding:0 1rem;}
+    .faq h2,.testimonials h2,.partners h2{color:#f0d536;margin-bottom:1rem;text-align:center;}
+    details{background:#011a4d;padding:1rem;margin-bottom:1rem;border-radius:8px;}
+    footer{text-align:center;padding:2rem;background:#011a4d;}
+    .social-icons a{color:#f0d536;margin:0 .5rem;text-decoration:none;}
+    .carousel{overflow:hidden;position:relative;}
+    .carousel-inner{display:flex;animation:slide 80s infinite linear;}
+    .testimonial{flex:0 0 auto;width:280px;margin-right:1rem;padding:1rem;background:#011a4d;border-radius:8px;}
+    @keyframes slide{to{transform:translateX(-100%);}}
+    .fade-in{animation:fadeIn 1.2s ease-in-out;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+    @media(max-width:600px){.hero h1{font-size:2rem;}.btn{width:80%;margin:.5rem auto;}}
+    #top-countdown {
+  background: #ff1a1a;
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+  padding: 0.8rem;
+  position: fixed;
+  box-sizing: border-box;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10000;
+  font-size: 1.1rem;
+  font-family: 'Inter', sans-serif;
+}
+body {
+  padding-top: 60px; /* compensação para o countdown fixo */
+}
+.fb-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #000;
+  font-family: Arial, sans-serif;
+}
+
+.fb-carousel {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.6s ease-in-out;
+}
+
+.fb-comment {
+  display: flex;
+  align-items: flex-start;
+  background: #f0f2f5;
+  padding: 0.8rem;
+  margin-bottom: 0.6rem;
+  border-radius: 10px;
+  min-height: 120px;
+}
+
+.fb-comment .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+}
+
+.comment-box {
+  flex: 1;
+}
+
+.comment-box p {
+  margin: 0.3rem 0;
+}
+
+.comment-box .date {
+  font-size: 0.85rem;
+  color: #65676b;
+  font-weight: normal;
+}
+
+.like-btn {
+  font-size: 0.9rem;
+  color: #1877f2;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 0.4rem;
+  display: inline-block;
+}
+
+.like-btn:hover {
+  text-decoration: underline;
+}
+
+.like-btn.curtido {
+  color: #0a56c2;
+  font-weight: bold;
+}
+
+.like-btn .like-count {
+  margin-left: 6px;
+  font-size: 0.85rem;
+  color: #555;
+}
+  </style>
+</head>
+<body><div id="top-countdown">
+  ⏰ Encerramento das inscrições em: <span id="timer">--:--:--</span>
+</div>
+
+<header>
+  <img src="assets/images/Chelsea_FC.svg" alt="Chelsea FC">
+  <nav>
+    <a href="#depoimentos">Início</a>
+    <a href="locais.html">Locais</a>
+    <a href="#">Participantes</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+</header>
+<section class="hero fade-in">
+  <h1>Peneira Oficial Chelsea FC Brasil </h1>
+  <p style="font-size:1.1em; line-height:1.6;">
+  <strong>O clube inglês está em busca de novos talentos no Brasil.</strong><br>
+  Meninos e meninas entre <strong>6 e 17 anos</strong> podem participar.<br>
+</p>
+
+  <div>
+    <a href="etapa1.html" class="btn btn-yellow">Inscreva-se Agora</a>
+    <a href="beneficios.html" class="btn btn-outline">Ver Benefícios</a>
+  </div>
+</section>
+<section class="testimonials" id="depoimentos">
+  <h2>Depoimentos</h2>
+  <div class="fb-container">
+    <div class="fb-carousel" id="fbCarousel">
+      <div class="fb-comment" data-id="comentario1">
+        <img src="assets/images/custom_female_1.png" class="avatar" alt="Carla">
+        <div class="comment-box">
+         <p><strong>Carla Ribeiro</strong> <span class="date">• 2 dias atrás</span></p>
+<p>Gente, sem palavras... meu filho saiu de lá com brilho no olho! Foi td muito bem feito mesmo, parabéns 👏</p>
+          <div class="like-btn" onclick="curtir(this)">👍 Curtir <span class="like-count"></span></div>
+        </div>
+      </div>
+
+      <div class="fb-comment" data-id="comentario2">
+        <img src="assets/images/custom_male_1.png" class="avatar" alt="Marcos">
+        <div class="comment-box">
+        <p><strong>Marcos Silva</strong> <span class="date">• 3 dias atrás</span></p>
+<p>estrutura top e pessoal muito atencioso. Valeu demais!!</p>          <div class="like-btn" onclick="curtir(this)">👍 Curtir <span class="like-count"></span></div>
+        </div>
+      </div>
+
+      <div class="fb-comment" data-id="comentario3">
+        <img src="assets/images/custom_female_2.png" class="avatar" alt="Patrícia">
+        <div class="comment-box">
+       <p><strong>Mychela Minelly</strong> <span class="date">• 1 semana atrás</span></p>
+<p>muito bem organizado, fui com medo mas foi melhor do que esperava. minha filha amou 🥰</p>
+          <div class="like-btn" onclick="curtir(this)">👍 Curtir <span class="like-count"></span></div>
+        </div>
+      </div>
+
+      <div class="fb-comment" data-id="comentario4">
+        <img src="assets/images/custom_female_3.png" class="avatar" alt="Luciana">
+        <div class="comment-box">
+       <p><strong>Luciana Ferreira</strong> <span class="date">• 6 dias atrás</span></p>
+<p>Nem acreditei quando vi que ia ter na minha cidade!! Experiência única, de verdade!</p>
+
+          <div class="like-btn" onclick="curtir(this)">👍 Curtir <span class="like-count"></span></div>
+        </div>
+      </div>
+
+      <div class="fb-comment" data-id="comentario5">
+        <img src="assets/images/custom_male_2.png" class="avatar" alt="Renato">
+        <div class="comment-box">
+       <p><strong>Renato Santoos</strong> <span class="date">• 1 semana atrás</span></p>
+<p>Participamos semana passada. só tenho a agradecer, tudo certinho, muito respeito com os meninos. show!</p>
+
+          <div class="like-btn" onclick="curtir(this)">👍 Curtir <span class="like-count"></span></div>
+        </div>
+      </div>
+
+      <div class="fb-comment" data-id="comentario6">
+        <img src="assets/images/custom_female_4.png" class="avatar" alt="Juliana">
+        <div class="comment-box">
+          <p><strong>Lari Silva</strong> <span class="date">• 2 semanas atrás</span></p>
+          <p>Minha filha ficou encantada. Evento maravilhoso, recomendo muito!</p>
+          <div class="like-btn" onclick="curtir(this)">👍 Curtir <span class="like-count"></span></div>
+        </div>
+      </div>
+	  <div class="fb-comment" data-id="comentario7">
+  <img src="assets/images/custom_female_5.png" class="avatar" alt="Jéssica">
+  <div class="comment-box">
+    <p><strong>Jéssica Andrade</strong> <span class="date">• 3 semanas atrás</span></p>
+    <p>Fui com meu sobrinho e olha, chorei de emoção. ver ele feliz assim não tem preço 🥹</p>
+    <div class="like-btn" onclick="curtir(this)">👍 Curtir <span class="like-count"></span></div>
+  </div>
+</div>
+
+<div class="fb-comment" data-id="comentario8">
+  <img src="assets/images/custom_male_3.png" class="avatar" alt="Bruno">
+  <div class="comment-box">
+    <p><strong>Bruno Ferreira</strong> <span class="date">• 4 dias atrás</span></p>
+    <p>top d+!! meu filho tava nervoso mas foi mto bem tratado, tão de parabéns msm 👏</p>
+    <div class="like-btn" onclick="curtir(this)">👍 Curtir <span class="like-count"></span></div>
+  </div>
+</div>
+
+<div class="fb-comment" data-id="comentario9">
+  <img src="assets/images/custom_female_6.webp" class="avatar" alt="Naiara">
+  <div class="comment-box">
+    <p><strong>Naiara Souza</strong> <span class="date">• 5 dias atrás</span></p>
+    <p>evento organizado, seguro e com carinho pelas crianças! voltaria fácil 😍</p>
+    <div class="like-btn" onclick="curtir(this)">👍 Curtir <span class="like-count"></span></div>
+  </div>
+</div>
+
+<div class="fb-comment" data-id="comentario10">
+  <img src="assets/images/custom_female_6.webp" class="avatar" alt="João">
+  <div class="comment-box">
+    <p><strong>João Vitor</strong> <span class="date">• 1 mês atrás</span></p>
+    <p>achei que era só mais uma peneira mas fui surpreendido. muito respeito com os pais tbm, valeu!</p>
+    <div class="like-btn" onclick="curtir(this)">👍 Curtir <span class="like-count"></span></div>
+  </div>
+</div>
+
+    </div>
+	
+  </div>
+</section>
+<div class="security-box">🔒 Site seguro | Inscrição com CPF | Parceria Oficial Chelsea FC</div>
+<section class="faq" id="faq">
+  <h2>Perguntas Frequentes</h2>
+  <details><summary>A peneira vai acontecer na minha cidade?</summary>
+    <p>Confira a <a href="locais.html" style="color:#f0d536;">lista completa</a>. Ao preencher o formulário você saberá sobre sua cidade.</p>
+  </details>
+  <details><summary>Quem pode participar?</summary>
+    <p>Meninos e meninas entre 6 e 17 anos.</p>
+  </details>
+  <details><summary>O que está incluso?</summary>
+    <p>Os atletas aprovados têm 100% dos custos cobertos, incluindo moradia, alimentação, estudos e saúde.
+Vivenciam a metodologia inglesa, treinam com infraestrutura de elite, recebem educação de excelência, acompanhamento médico completo e visibilidade internacional.
+<br>Também contam com ajuda financeira inicial e bônus por desempenho.<br>
+👉 Para mais detalhes, acesse a página <a href="beneficios.html" style="color:#f0d536;">Benefícios</a></p>
+  </details>
+  <details><summary>Como sei se fui aprovado?</summary>
+    <p>Os candidatos aprovados na peneira presencial serão contatados oficialmente por nossa equipe através do WhatsApp e e-mail cadastrados no momento da inscrição.
+As mensagens conterão todas as instruções e orientações para as próximas etapas.</p>
+  </details>
+</section>
+
+<section class="partners">
+  <h2>Parceria Internacional</h2>
+  <p>Realização oficial com Chelsea FC. Organização registrada e transparente no Brasil.</p>
+</section>
+<footer>
+  <div class="footer-container" style="text-align: center; max-width: 600px; margin: 0 auto; font-family: Arial, sans-serif;">
+    <p><strong>⚽ Peneira Oficial Autorizada pelo Chelsea FC</strong> | Sede Brasil - CNPJ: 97.545.051/0001-30</p>
+    <p style="margin: 5px 0; font-weight: bold;">
+      Contato: +44 20 7386 8866 | info@peneirachelsea.com
+    </p>
+    <div style="margin-top: 10px;">
+      <a href="https://www.instagram.com/chelseafc/" target="_blank" style="margin-right: 10px; color: #ffffff; text-decoration: underline;">Instagram</a>
+      <a href="https://www.facebook.com/chelseafc" target="_blank" style="margin-right: 10px; color: #ffffff; text-decoration: underline;">Facebook</a>
+      <a href="mailto:info@peneirachelsea.com" style="color: #ffffff; text-decoration: underline;">Contato</a>
+    </div>
+  </div>
+</footer>
+<script>
+function curtir(element) {
+    const comment = element.closest('.fb-comment');
+    const commentId = comment.getAttribute('data-id');
+
+    if (localStorage.getItem(`curtido_${commentId}`)) return;
+
+    const count = Math.floor(Math.random() * 501) + 500;
+    element.classList.add('curtido');
+    element.innerHTML = `👍 Curtiu <span class="like-count">${count} curtidas</span>`;
+    localStorage.setItem(`curtido_${commentId}`, count);
+  }
+
+  // Ao carregar a página, aplica os curtidos salvos
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.fb-comment').forEach(comment => {
+      const id = comment.getAttribute('data-id');
+      const savedLike = localStorage.getItem(`curtido_${id}`);
+      if (savedLike) {
+        const btn = comment.querySelector('.like-btn');
+        btn.classList.add('curtido');
+        btn.innerHTML = `👍 Curtiu <span class="like-count">${savedLike} curtidas</span>`;
+      }
+    });
+  });
+
+  // Carrossel vertical automático
+  const carousel = document.getElementById('fbCarousel');
+  const comments = carousel.children;
+  const commentHeight = 134;
+  let index = 0;
+
+  setInterval(() => {
+    index++;
+    if (index > comments.length - 3) {
+      index = 0;
+    }
+    carousel.style.transform = `translateY(-${index * commentHeight}px)`;
+  }, 3000);
+function getMidnightTimestamp() {
+  const now = new Date();
+  const midnight = new Date();
+  midnight.setHours(24, 0, 0, 0); // próximo 00:00
+  return midnight.getTime();
+}
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const midnight = getMidnightTimestamp();
+  const t = midnight - now;
+
+  if (t <= 0) {
+    document.getElementById("timer").innerHTML = "0 horas, 0 minutos e 0 segundos";
+    return;
+  }
+
+  const hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((t / (1000 * 60)) % 60);
+  const seconds = Math.floor((t / 1000) % 60);
+
+  document.getElementById("timer").innerHTML =
+    `${hours} ${hours === 1 ? 'hora' : 'horas'}, ` +
+    `${minutes} ${minutes === 1 ? 'minuto' : 'minutos'} e ` +
+    `${seconds} ${seconds === 1 ? 'segundo' : 'segundos'}`;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
+
+</body></html>
